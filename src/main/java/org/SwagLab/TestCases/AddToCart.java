@@ -21,16 +21,12 @@ public class AddToCart {
         System.out.println("Page is opened!");
         //Maximize browser window
         driver.manage().window().maximize();
-        Thread.sleep(1000);
 
 
         LoginPage login = new LoginPage(driver);
         login.typeUserName();
-        Thread.sleep(500);
         login.typePassword();
-        Thread.sleep(500);
         login.clickOnLoginButton();
-        Thread.sleep(500);
 
         //Scroll to end
         JavascriptExecutor js = (JavascriptExecutor) driver;
@@ -39,9 +35,5 @@ public class AddToCart {
         // Add to cart
         driver.findElement(By.id("add-to-cart-sauce-labs-onesie")).click();
         Thread.sleep(2000);
-
-
-
-
     }
 }
