@@ -1,0 +1,8 @@
+org\SwagLab\TestCases\AddToCart.class
+org\SwagLab\Pages\LoginPage.class
+org\SwagLab\TestCases\Filters.class
+org\SwagLab\TestCases\PositiveTest.class
+org\SwagLab\Pages\DashboardPage.class
+org\SwagLab\TestCases\HighestPrice.class
+org\SwagLab\Pages\LogoutPage.class
+org\SwagLab\TestCases\NegativeTest.class
