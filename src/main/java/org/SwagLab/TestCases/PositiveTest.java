@@ -22,13 +22,11 @@ public class PositiveTest {
         System.out.println("Page is opened!");
         driver.manage().window().maximize(); //Maximize browser window
 
-        LoginPage login = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login();
+
         DashboardPage dashboard = new DashboardPage(driver);
         LogoutPage logout = new LogoutPage(driver);
-        login.typeUserName();
-        login.typePassword();
-        login.clickOnLoginButton();
-
         String actualUrl = driver.getCurrentUrl();
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(actualUrl, expectedUrl, "The Url is incorrect!"); //Verify that the Url is changed and as expected

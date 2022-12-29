@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
     WebDriver driver;
-    By username = By.id("user-name1");
+    By username = By.id("user-name");
     By password = By.id("password");
     By loginButton = By.cssSelector("#login-button");
 
@@ -13,22 +13,41 @@ public class LoginPage {
         this.driver = driver;
     }
 
-    public void typeUserName() {
+    public void login(){
+        typeUserName();
+        typePassword();
+        clickOnLoginButton();
+    }
+
+    public void loginWrongUsername(){
+        typeWrongUserName();
+        typePassword();
+        clickOnLoginButton();
+    }
+
+    public void loginWrongPassword(){
+        typeUserName();
+        typeWrongPassword();
+        clickOnLoginButton();
+    }
+
+
+    private void typeUserName() {
         driver.findElement(username).sendKeys("standard_user");
     }
 
-    public void typePassword() {
+    private void typePassword() {
         driver.findElement(password).sendKeys("secret_sauce");
     }
 
-    public void clickOnLoginButton() {
+    private void clickOnLoginButton() {
         driver.findElement(loginButton).click();
     }
 
-    public void typeWrongUserName() {
+    private void typeWrongUserName() {
         driver.findElement(username).sendKeys("1");
     }
-    public void typeWrongPassword() {
+    private void typeWrongPassword() {
         driver.findElement(password).sendKeys("1");
     }
 

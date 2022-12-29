@@ -25,13 +25,11 @@ public class Filters {
         driver.manage().window().maximize();
         Thread.sleep(1000);
 
-        LoginPage login = new LoginPage(driver);
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login();
+
         DashboardPage dashboard = new DashboardPage(driver);
         LogoutPage logout = new LogoutPage(driver);
-        login.typeUserName();
-        login.typePassword();
-        login.clickOnLoginButton();
-
         //Verify that the Url is changed and as expected
         String actualUrl = driver.getCurrentUrl();
         String expectedUrl = "https://www.saucedemo.com/inventory.html";

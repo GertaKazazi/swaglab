@@ -23,10 +23,8 @@ public class HighestPrice {
         driver.manage().window().maximize();
         Thread.sleep(1000);
 
-        LoginPage login = new LoginPage(driver);
-        login.typeUserName();
-        login.typePassword();
-        login.clickOnLoginButton();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login();
 
         //Open dropdown
         WebElement dropdown = driver.findElement(By.cssSelector(".product_sort_container"));

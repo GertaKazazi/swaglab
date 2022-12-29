@@ -4,14 +4,12 @@ import org.SwagLab.Pages.LoginPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 public class AddToCart {
     @Test
-
-    public void loginTest() throws InterruptedException {
+    public void addToCart() throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();
 
@@ -23,10 +21,8 @@ public class AddToCart {
         driver.manage().window().maximize();
 
 
-        LoginPage login = new LoginPage(driver);
-        login.typeUserName();
-        login.typePassword();
-        login.clickOnLoginButton();
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.login();
 
         //Scroll to end
         JavascriptExecutor js = (JavascriptExecutor) driver;

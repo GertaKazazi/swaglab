@@ -20,10 +20,8 @@ public class NegativeTest {
         driver.get(url);
         driver.manage().window().maximize();
 
-        LoginPage login = new LoginPage(driver);
-        login.typeWrongUserName();   //False username test
-        login.typePassword();  //Enter Password
-        login.clickOnLoginButton();  //Click Login
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginWrongUsername(); //Click Login
 
 
         String expectedResult = "Epic sadface: Username and password do not match any user in this service";
@@ -45,10 +43,8 @@ public class NegativeTest {
         driver.get(url); //Open test page
         driver.manage().window().maximize();
 
-        LoginPage login = new LoginPage(driver);
-        login.typeUserName();  //Type correct UserName
-        login.typeWrongPassword(); //Enter wrong Password
-        login.clickOnLoginButton(); //Click Login
+        LoginPage loginPage = new LoginPage(driver);
+        loginPage.loginWrongPassword();
 
         String expectedResult = "Epic sadface: Username and password do not match any user in this service";
         WebElement actualResult = driver.findElement(By.xpath("//div[@id='login_button_container']//form//h3"));
