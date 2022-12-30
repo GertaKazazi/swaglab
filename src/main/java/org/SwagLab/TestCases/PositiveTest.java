@@ -10,21 +10,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
-public class PositiveTest {
+public class PositiveTest extends BaseTest {
     @Test
-
     public void loginTest() throws InterruptedException {
-        System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
-        WebDriver driver = new ChromeDriver();
-
-        String url = "https://www.saucedemo.com/";
-        driver.get(url); //Open test page
-        System.out.println("Page is opened!");
-        driver.manage().window().maximize(); //Maximize browser window
-
-        LoginPage loginPage = new LoginPage(driver);
-        loginPage.login();
-
         DashboardPage dashboard = new DashboardPage(driver);
         LogoutPage logout = new LogoutPage(driver);
         String actualUrl = driver.getCurrentUrl();
