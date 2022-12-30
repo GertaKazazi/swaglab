@@ -7,10 +7,10 @@ import org.openqa.selenium.WebDriver;
 public class DashboardPage {
     By menuButton = By.id("react-burger-menu-btn");
     By dropDown = By.cssSelector(".product_sort_container");
-    private final static By FILTER_AZ = By.xpath("//select[@class='product_sort_container']//option[@value='az']");
-    private final static By FILTER_ZA = By.xpath("//select[@class='product_sort_container']//option[@value='za']");
-    private final static By FILTER_LOW_HIGH  = By.xpath("//select[@class='product_sort_container']//option[@value='lohi']");
-    private final static By FILTER_HIGH_LOW = By.xpath("//select[@class='product_sort_container']//option[@value='hilo']");
+    private final static By SORT_AZ = By.xpath("//select[@class='product_sort_container']//option[@value='az']");
+    private final static By SORT_ZA = By.xpath("//select[@class='product_sort_container']//option[@value='za']");
+    private final static By SORT_LOW_HIGH  = By.xpath("//select[@class='product_sort_container']//option[@value='lohi']");
+    private final static By SORT_HIGH_LOW = By.xpath("//select[@class='product_sort_container']//option[@value='hilo']");
 
     WebDriver driver;
 
@@ -35,17 +35,17 @@ public class DashboardPage {
     public void openDropdown() {
         driver.findElement(dropDown).click();
     }
-    public void filterAZ() {
-        driver.findElement(FILTER_AZ).click();
+    public void sortAZ() {
+        driver.findElement(SORT_AZ).click();
     }
-    public void filterZA() {
-        driver.findElement(FILTER_ZA).click();
+    public void sortZA() {
+        driver.findElement(SORT_ZA).click();
     }
-    public void filterLoHi() {
-        driver.findElement(FILTER_LOW_HIGH).click();
+    public void sortLoHi() {
+        driver.findElement(SORT_LOW_HIGH).click();
     }
-    public void filterHiLo() {
-        driver.findElement(FILTER_HIGH_LOW).click();
+    public void sortHiLo() {
+        driver.findElement(SORT_HIGH_LOW).click();
     }
 }
 

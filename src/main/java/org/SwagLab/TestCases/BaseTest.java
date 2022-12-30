@@ -5,7 +5,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeTest;
 
 public class BaseTest {
 
@@ -30,5 +29,7 @@ public class BaseTest {
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(actualUrl, expectedUrl, "The Url is incorrect!");
     }
+
+
 
 }

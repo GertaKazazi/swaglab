@@ -10,7 +10,7 @@ import org.testng.annotations.Test;
 
 public class NegativeTest {
     @Test
-    public void loginNegativeTest() throws InterruptedException {
+    public void loginNegativeTest(){
 
         System.out.println("Starting login test!");
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");

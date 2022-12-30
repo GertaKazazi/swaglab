@@ -19,6 +19,7 @@ public class PositiveTest extends BaseTest {
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(actualUrl, expectedUrl, "The Url is incorrect!"); //Verify that the Url is changed and as expected
         dashboard.clickOnMenuButton(); //Click Menu
+        Thread.sleep(2000);
         logout.clickOnLogoutButton(); //Click Logout
         driver.quit();     //Close window
     }
