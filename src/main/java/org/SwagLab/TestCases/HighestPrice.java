@@ -1,26 +1,26 @@
 package org.SwagLab.TestCases;
-
-import org.SwagLab.Pages.LoginPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class HighestPrice extends BaseTest{
+import java.util.List;
+
+public class HighestPrice extends BaseTest {
 
     @Test
-    public void loginTest() throws InterruptedException {
-        //Open dropdown
-        WebElement dropdown = driver.findElement(By.cssSelector(".product_sort_container"));
-        dropdown.click();
-        Thread.sleep(2000);
-        System.out.println("DropDown is opended");
-        //Choose price from high to low
-        driver.findElement(By.cssSelector(".product_sort_container")).click();
-        driver.findElement(By.xpath("//select[@class='product_sort_container']//option[@value='hilo']")).click();
-        Thread.sleep(2000);
-
+    public void loginTest()  {
+        List<WebElement> products = driver.findElements(By.className("inventory_item"));
+        double max = Double.MIN_VALUE;
+        for (WebElement product : products) {
+            String elementText = product.findElement(By.className("inventory_item_price")).getText();
+            elementText = elementText.substring(1);
+            double ele = Double.parseDouble(elementText);
+            if (ele > max) {
+                max = ele;
+            }
+        }
+        System.out.println(max);
+        driver.quit();
     }
 }
 

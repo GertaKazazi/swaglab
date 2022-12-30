@@ -23,7 +23,6 @@ public class NegativeTest {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginWrongUsername(); //Click Login
 
-
         String expectedResult = "Epic sadface: Username and password do not match any user in this service";
         WebElement actualResult = driver.findElement(By.xpath("//div[@id='login_button_container']//form//h3"));
         String actualResultTest = actualResult.getText();
