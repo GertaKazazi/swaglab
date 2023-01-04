@@ -1,9 +1,11 @@
 package org.SwagLab.TestCases;
 
 import org.SwagLab.Pages.LoginPage;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 
 public class BaseTest {
@@ -29,7 +31,20 @@ public class BaseTest {
         String expectedUrl = "https://www.saucedemo.com/inventory.html";
         Assert.assertEquals(actualUrl, expectedUrl, "The Url is incorrect!");
     }
+    public void scrollUp() throws InterruptedException {
+        JavascriptExecutor jsu = (JavascriptExecutor) driver;
+        jsu.executeScript("window.scrollBy(0,-350)");
+        Thread.sleep(2000);
+    }
+    public void scrollToEnd() throws InterruptedException {
 
-
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0,350)");
+        Thread.sleep(2000);
+    }@AfterClass
+    public void quitDriver()
+    {
+        driver.quit();
+    }
 
 }

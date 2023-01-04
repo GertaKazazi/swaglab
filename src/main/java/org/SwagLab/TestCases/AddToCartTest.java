@@ -1,12 +1,9 @@
 package org.SwagLab.TestCases;
-
 import org.SwagLab.Pages.DashboardPage;
 import org.openqa.selenium.By;
-
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 import java.util.List;
 
 
@@ -15,7 +12,7 @@ public class AddToCartTest extends BaseTest {
     public void addToCart() throws InterruptedException {
         //Scroll to end
         DashboardPage dashboardPage = new DashboardPage(driver);
-        dashboardPage.scrollToEnd();
+        scrollToEnd();
         // Add to cart
         WebElement addProd = driver.findElement(By.id("add-to-cart-sauce-labs-onesie"));
         WebElement addProd1 = driver.findElement(By.id("add-to-cart-test.allthethings()-t-shirt-(red)"));
@@ -25,7 +22,7 @@ public class AddToCartTest extends BaseTest {
         addProd1.click();
         Thread.sleep(2000);
         //Scroll up
-        dashboardPage.scrollUp();
+        scrollUp();
 
         //Verify that the product is added to cart
         driver.findElement(By.xpath("//div[@id='shopping_cart_container']/a[@class='shopping_cart_link']")).click();
@@ -41,7 +38,6 @@ public class AddToCartTest extends BaseTest {
         String nr = quantity.getText();
         String expNr = "1";
         Assert.assertEquals(nr, expNr, "Quantity is not correct");
-        driver.quit();  //Close browser
-
+        //driver.quit();  //Close browser
     }
 }

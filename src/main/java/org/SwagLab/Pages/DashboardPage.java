@@ -5,8 +5,8 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class DashboardPage {
-    By menuButton = By.id("react-burger-menu-btn");
-    By dropDown = By.cssSelector(".product_sort_container");
+    private final static By MENU_BUTTON = By.id("react-burger-menu-btn");
+    private final static By DROPDOWN = By.cssSelector(".product_sort_container");
     private final static By SORT_AZ = By.xpath("//select[@class='product_sort_container']//option[@value='az']");
     private final static By SORT_ZA = By.xpath("//select[@class='product_sort_container']//option[@value='za']");
     private final static By SORT_LOW_HIGH  = By.xpath("//select[@class='product_sort_container']//option[@value='lohi']");
@@ -19,21 +19,11 @@ public class DashboardPage {
     }
 
     public void clickOnMenuButton() {
-        driver.findElement(menuButton).click();
+        driver.findElement(MENU_BUTTON).click();
     }
-    public void scrollToEnd() throws InterruptedException {
 
-        JavascriptExecutor js = (JavascriptExecutor) driver;
-        js.executeScript("window.scrollBy(0,350)");
-        Thread.sleep(2000);
-    }
-    public void scrollUp() throws InterruptedException {
-        JavascriptExecutor jsu = (JavascriptExecutor) driver;
-        jsu.executeScript("window.scrollBy(0,-350)");
-        Thread.sleep(2000);
-    }
     public void openDropdown() {
-        driver.findElement(dropDown).click();
+        driver.findElement(DROPDOWN).click();
     }
     public void sortAZ() {
         driver.findElement(SORT_AZ).click();

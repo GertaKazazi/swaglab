@@ -27,7 +27,6 @@ public class HighestPrice extends BaseTest {
         dashboardPage.sortHiLo();
         String expectedMaxPrice = driver.findElement(By.xpath("//*[@id=\"inventory_container\"]/div/div[1]/div[2]/div[2]/div")).getText().substring(1);
         Assert.assertEquals(max,Double.parseDouble(expectedMaxPrice));
-        driver.quit();
     }
 }
 

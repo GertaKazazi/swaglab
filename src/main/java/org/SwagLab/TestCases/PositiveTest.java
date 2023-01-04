@@ -21,6 +21,6 @@ public class PositiveTest extends BaseTest {
         dashboard.clickOnMenuButton(); //Click Menu
         Thread.sleep(2000);
         logout.clickOnLogoutButton(); //Click Logout
-        driver.quit();     //Close window
+
     }
 }
