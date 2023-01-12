@@ -1,17 +1,14 @@
 package org.SwagLab.TestCases;
-import org.SwagLab.Pages.DashboardPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import java.util.List;
 
-
 public class AddToCartTest extends BaseTest {
     @Test
     public void addToCart() throws InterruptedException {
         //Scroll to end
-        DashboardPage dashboardPage = new DashboardPage(driver);
         scrollToEnd();
         // Add to cart
         WebElement addProd = driver.findElement(By.id("add-to-cart-sauce-labs-onesie"));

@@ -29,11 +29,10 @@ public class NegativeTest {
         Assert.assertTrue(actualResultTest.contains(expectedResult)); //Error Message Assertion
 
         driver.quit();//Close browser
-
     }
 
     @Test
-    public void falsePasswordTest() throws InterruptedException {
+    public void falsePasswordTest(){
         System.out.println("Starting login test!");
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         WebDriver driver = new ChromeDriver();

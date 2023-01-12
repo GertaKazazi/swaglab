@@ -1,5 +1,4 @@
 package org.SwagLab.TestCases;
-
 import org.SwagLab.Pages.CheckoutPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;

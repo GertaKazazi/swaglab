@@ -1,12 +1,11 @@
 package org.SwagLab.Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class CheckoutPage {
-    private final static By CHECKOUT_BUTTON = By.id("checkout");
-    private final static By FIRST_NAME = By.id("first-name");
+    private final static By CHECKOUT_BUTTON = By.xpath("//button[@class='btn btn_action btn_medium checkout_button']");
+    private final static By FIRST_NAME = By.cssSelector("#first-name");
     private final static By LAST_NAME = By.id("last-name");
     private final static By POSTAL_CODE = By.id("postal-code");
     private final static By CONTINUE_BUTTON = By.id("continue");

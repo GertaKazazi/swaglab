@@ -1,19 +1,24 @@
 package org.SwagLab.TestCases;
-
 import org.SwagLab.Pages.LoginPage;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.testng.Assert;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
+import java.io.File;
 
 public class BaseTest {
 
     public WebDriver driver;
 
     @BeforeClass
-    public void LoginDriver() {
+    public void LoginDriver()  {
         System.setProperty("webdriver.chrome.driver", "src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
 
@@ -41,10 +46,25 @@ public class BaseTest {
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("window.scrollBy(0,350)");
         Thread.sleep(2000);
-    }@AfterClass
+    }
+    @AfterMethod
+    public void tearDown(ITestResult result) {
+        // Here will compare if test is failing then only it will enter into if condition
+        if (ITestResult.FAILURE == result.getStatus()) {
+            try {
+                TakesScreenshot screenshot = (TakesScreenshot) driver;
+                File source = screenshot.getScreenshotAs(OutputType.FILE);
+                FileHandler.copy(source, new File("./screenshot/" + result.getName() + ".png"));
+            } catch (Exception e) {
+                System.out.println("Exception while taking screenshot " + e.getMessage());
+            }
+        }
+    }
+    @AfterClass
     public void quitDriver()
     {
         driver.quit();
     }
-
 }
+
+
