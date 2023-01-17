@@ -8,8 +8,8 @@ public class CheckoutPage {
     private final static By FIRST_NAME = By.cssSelector("#first-name");
     private final static By LAST_NAME = By.id("last-name");
     private final static By POSTAL_CODE = By.id("postal-code");
-    private final static By CONTINUE_BUTTON = By.id("continue");
-    private final static By FINISH_BUTTON = By.id("finish");
+    private final static By CONTINUE_BUTTON = By.xpath("//input[@class='submit-button btn btn_primary cart_button btn_action']");
+    private final static By FINISH_BUTTON = By.cssSelector("#finish");
 
     WebDriver driver;
 

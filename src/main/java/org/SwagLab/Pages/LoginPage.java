@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 public class LoginPage {
     WebDriver driver;
     private final static By USERNAME = By.id("user-name");
-    private final static By PASSWORD= By.id("password");
+    private final static By PASSWORD= By.cssSelector("input#password");
     private final static By LOGIN_BUTTON = By.cssSelector("#login-button");
 
     public LoginPage(WebDriver driver) {

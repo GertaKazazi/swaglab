@@ -13,8 +13,9 @@ public class AddToCartTest extends BaseTest {
         // Add to cart
         WebElement addProd = driver.findElement(By.id("add-to-cart-sauce-labs-onesie"));
         WebElement addProd1 = driver.findElement(By.id("add-to-cart-test.allthethings()-t-shirt-(red)"));
-        WebElement itemDecp = driver.findElement(By.xpath("//*[@id=\"item_2_title_link\"]/div"));
+        WebElement itemDecp = driver.findElement(By.xpath("//a[@id='item_2_title_link']"));
         String beforeResult = itemDecp.getText();
+        System.out.println(beforeResult);
         addProd.click();
         addProd1.click();
         Thread.sleep(2000);
@@ -31,7 +32,7 @@ public class AddToCartTest extends BaseTest {
             }
         }
         //Verify that the quantity is correct
-        WebElement quantity = driver.findElement(By.xpath("//*[@id=\"cart_contents_container\"]/div/div[1]/div[3]/div[1]"));
+        WebElement quantity = driver.findElement(By.xpath("(//div[@class='cart_quantity'])[2]"));
         String nr = quantity.getText();
         String expNr = "1";
         Assert.assertEquals(nr, expNr, "Quantity is not correct");

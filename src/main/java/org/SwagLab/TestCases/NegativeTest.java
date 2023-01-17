@@ -24,7 +24,7 @@ public class NegativeTest {
         loginPage.loginWrongUsername(); //Click Login
 
         String expectedResult = "Epic sadface: Username and password do not match any user in this service";
-        WebElement actualResult = driver.findElement(By.xpath("//div[@id='login_button_container']//form//h3"));
+        WebElement actualResult = driver.findElement(By.xpath("//h3[@data-test='error']"));
         String actualResultTest = actualResult.getText();
         Assert.assertTrue(actualResultTest.contains(expectedResult)); //Error Message Assertion
 
@@ -45,7 +45,7 @@ public class NegativeTest {
         loginPage.loginWrongPassword();
 
         String expectedResult = "Epic sadface: Username and password do not match any user in this service";
-        WebElement actualResult = driver.findElement(By.xpath("//div[@id='login_button_container']//form//h3"));
+        WebElement actualResult = driver.findElement(By.xpath("//h3[@data-test='error']"));
         String actualResultTest = actualResult.getText();
         Assert.assertTrue(actualResultTest.contains(expectedResult));  //Error Message Assertion
 

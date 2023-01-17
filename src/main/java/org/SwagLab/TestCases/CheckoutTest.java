@@ -22,7 +22,7 @@ public class CheckoutTest extends AddToCartTest{
         scrollUp();
         //Verify that the order is Completed
         String expectedResult ="CHECKOUT: COMPLETE!";
-        WebElement title = driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[2]"));
+        WebElement title = driver.findElement(By.xpath("//span[@class='title']"));
         String actualResult = title.getText();
         Assert.assertEquals(actualResult, expectedResult);
     }

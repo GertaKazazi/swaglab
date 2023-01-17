@@ -25,7 +25,8 @@ public class HighestPrice extends BaseTest {
         System.out.println(max);
         dashboardPage.openDropdown();
         dashboardPage.sortHiLo();
-        String expectedMaxPrice = driver.findElement(By.xpath("//*[@id=\"inventory_container\"]/div/div[1]/div[2]/div[2]/div")).getText().substring(1);
+        String expectedMaxPrice = driver.findElement(By.xpath("(//div[@class='inventory_item_price'])[1]")).getText().substring(1);
+        System.out.println(expectedMaxPrice);
         Assert.assertEquals(max,Double.parseDouble(expectedMaxPrice));
     }
 }
