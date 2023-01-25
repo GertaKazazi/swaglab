@@ -1,7 +1,6 @@
 package org.SwagLab.Pages;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
 public class DashboardPage {
@@ -13,15 +12,12 @@ public class DashboardPage {
     private final static By SORT_HIGH_LOW = By.xpath("//select[@class='product_sort_container']//option[@value='hilo']");
 
     WebDriver driver;
-
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void clickOnMenuButton() {
         driver.findElement(MENU_BUTTON).click();
     }
-
     public void openDropdown() {
         driver.findElement(DROPDOWN).click();
     }

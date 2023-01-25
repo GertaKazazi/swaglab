@@ -10,33 +10,25 @@ public class CheckoutPage {
     private final static By POSTAL_CODE = By.id("postal-code");
     private final static By CONTINUE_BUTTON = By.xpath("//input[@class='submit-button btn btn_primary cart_button btn_action']");
     private final static By FINISH_BUTTON = By.cssSelector("#finish");
-
     WebDriver driver;
-
     public CheckoutPage(WebDriver driver) {
         this.driver = driver;
     }
-
     public void clickOnCheckoutButton() {
         driver.findElement(CHECKOUT_BUTTON).click();
     }
-
     public void typeFirstName() {
         driver.findElement(FIRST_NAME).sendKeys("Gerta");
     }
-
     public void typeLastName() {
         driver.findElement(LAST_NAME).sendKeys("Kazazi");
     }
-
     public void typePostalCode() {
         driver.findElement(POSTAL_CODE).sendKeys("1001");
     }
-
     public void clickOnContinueButton() {
         driver.findElement(CONTINUE_BUTTON).click();
     }
-
     public void clickOnFinishButton() {
         driver.findElement(FINISH_BUTTON).click();
     }

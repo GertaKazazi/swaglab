@@ -24,6 +24,6 @@ public class CheckoutTest extends AddToCartTest{
         String expectedResult ="CHECKOUT: COMPLETE!";
         WebElement title = driver.findElement(By.xpath("//span[@class='title']"));
         String actualResult = title.getText();
-        Assert.assertEquals(actualResult, expectedResult);
+        Assert.assertEquals(actualResult, expectedResult , "The message of completed order is not received");
     }
 }

@@ -36,6 +36,6 @@ public class AddToCartTest extends BaseTest {
         String nr = quantity.getText();
         String expNr = "1";
         Assert.assertEquals(nr, expNr, "Quantity is not correct");
-        //driver.quit();  //Close browser
+
     }
 }
